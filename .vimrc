@@ -200,14 +200,13 @@ map <F6> :set spell! <cr>
 map <F4> :set number!<cr>
 
 " Disable search highlight
-nnoremap <Esc> :noh<return><Esc> 
+nmap <S-w> :noh<cr><esc>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Search, Saech replace
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
-map <c-space> ?
 " Find the next instance of the word under the cursor
 nnoremap <space><space> *
 " Search replace the word under the cursor
