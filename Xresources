@@ -27,15 +27,28 @@
 !xterm*boldFont: -*-*-*-*-*-*-*-100-*-*-*-60-iso10646-*
 !xterm*italicFont: -*-*-*-*-*-*-*-100-*-*-*-60-iso10646-*
 
-gterm.termName: xterm-256color
+xterm.termName: xterm-256color
+
+!xterm dimension
+xterm.vt100.geometry: 80x60
+
+! Ensure the locale is set up for UTF-8
+xterm.vt100.locale: true
 xterm*utf8: 1
+
+! Make 'Alt' behave as in other terminals
+xterm.vt100.metaSendsEscape: true
+
+
+! Configure fonts
 xterm*faceName: Ubuntu Mono
-xterm*faceSize: 16
+xterm*faceSize: 9
 xterm*renderFont: true
 
-!!! Enable copy/paste.
+
+!! Enable copy/paste.
 ! http://www.davidsimmons.com/soft/xtermhacks/
-xterm*VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
+xterm.vt100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
 
 
 !!! Foreground
@@ -52,7 +65,7 @@ xterm*foreground:       #d3d3d3
 ! Black
 !xterm*background:       #3F2F08
 !Gray
-xterm*background:      #303030 
+xterm*background:      #121212
 
 
 xterm*cursorColor:  #ff0000
@@ -71,8 +84,8 @@ xterm*color8:           #505450
 xterm*color1:           #a60101
 xterm*color9:           #f99090
 ! Greens
-xterm*color2:           #026802
-xterm*color10:          #a7e14b
+xterm*color2:           #5fafaf
+xterm*color10:          #5fd787
 ! Yellows
 xterm*color3:           #ab6e03
 xterm*color11:          #fddc01

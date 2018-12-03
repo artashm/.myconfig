@@ -113,7 +113,7 @@ set tm=500
 " Enable syntax highlighting
 syntax enable
 
-colorscheme torte
+colorscheme slate
 set background=dark
 
 " Set extra options when running in GUI mode
