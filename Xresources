@@ -13,7 +13,7 @@
 ! * showrgb — util to dump color db.
 ! * test-color-words16 — another color-displaying util (worth gist-ing).
 
-
+!Xterminal Configuration --------------------------------------------------------------
 !!! Fonts
 !xterm*font: -misc-ubuntu mono-medium-r-*-*-22-*-*-*-*-*-iso10646-*
 !xterm*boldFont: -misc-ubuntu mono-medium-r-*-*-22-*-*-*-*-*-iso10646-*
