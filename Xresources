@@ -1,19 +1,14 @@
-! xterm color scheme — Make all 16 beautiful.
-!
-! Suited for black background, but includes disabled alternative light scheme.
-!
-! Use xfontsel and xlsfonts to find other fonts.
-!
-! On Ubuntu I have to name this file ‘~/.Xdefaults-$(hostname)’
-!
-! ‘xrdb -load ~/.Xdefaults-stud’ is supposed to reload this file, but
-! doesn’t seem to, so just fire new xterm upon every change.
-!
-! Other resources:
-! * showrgb — util to dump color db.
-! * test-color-words16 — another color-displaying util (worth gist-ing).
+!yellow_l! Fonts 
 
-!Xterminal Configuration --------------------------------------------------------------
+Xft.autohint: 0
+Xft.lctfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialiasing: 1
+Xft.rgba: rgb
+Xft.dpi: 180
+
+!! Xterminal Configuration --------------------------------------------------------------
 !!! Fonts
 !xterm*font: -misc-ubuntu mono-medium-r-*-*-22-*-*-*-*-*-iso10646-*
 !xterm*boldFont: -misc-ubuntu mono-medium-r-*-*-22-*-*-*-*-*-iso10646-*
@@ -39,10 +34,12 @@ xterm*utf8: 1
 ! Make 'Alt' behave as in other terminals
 xterm.vt100.metaSendsEscape: true
 
+#define system_font Ubuntu Mono
 
 ! Configure fonts
+!xterm*faceName: Ubuntu Mono
 xterm*faceName: Ubuntu Mono
-xterm*faceSize: 9
+xterm*faceSize: 8
 xterm*renderFont: true
 
 
@@ -77,32 +74,101 @@ xterm*cursorColor:  #ff0000
 !xterm*dynamicColors:    true
 
 
-! Blacks
-xterm*color0:           #151515
-xterm*color8:           #505450
-! Reds
-xterm*color1:           #a60101
-xterm*color9:           #f99090
-! Greens
-xterm*color2:           #5fafaf
-xterm*color10:          #5fd787
-! Yellows
-xterm*color3:           #ab6e03
-xterm*color11:          #fddc01
-! Blues
-xterm*color4:           #4a5463
-xterm*color12:          #7d8794
-! Purples
-xterm*color5:           #9c3885
-xterm*color13:          #e628ba
-! Cyans
-xterm*color6:           #08bab0
-xterm*color14:          #74fff7
-! Whites
-xterm*color7:           #bbbbbb
-xterm*color15:          #ffffff
+#define black     #282a2e
+#define black_l   #373b41
+
+#define red       #a54242
+#define red_l     #cc6666
+
+#define green     #8c9440
+#define green_l   #b5bd68
+
+#define yellow    #de935f
+#define yellow_l  #f0c674
+
+#define blue      #5f819d
+#define blue_l    #81a2be
+
+#define purple    #85678f
+#define purple_l  #b294bb
+
+#define cyan      #5e8d87
+#define cyan_l    #8abeb7
+ 
+#define white     #707880
+#define white_l   #c5c8c6
 
 
+! special
+*.foreground:   #c5c8c6
+*.background:   #1d1f21
+*.cursorColor:  #c5c8c6
+
+! black
+*.color0:       black
+*.color8:       black_l
+
+! red
+*.color1:       red
+*.color9:       red_l
+
+! green
+*.color2:       green
+*.color10:      green_l
+
+! yellow
+*.color3:       yellow
+*.color11:      yellow_l
+
+! blue
+*.color4:       blue
+*.color12:      blue_l
+
+! magenta
+*.color5:       purple
+*.color13:      purple_l
+
+! cyan
+*.color6:       cyan
+*.color14:      cyan_l
+
+! white
+*.color7:       white
+*.color15:      white_l
+
+! Rofi Theme
+! State:           'bg',     'fg',   'bgalt',  'hlbg',  'hlfg'
+rofi.color-normal: black,   white,  black,    black,    purple
+rofi.color-urgent: black_l, yellow, black_l,  black_l,  red
+rofi.color-active: black,   white,  black,    black,   purple
+
+!                  'background', 'border', 'separator'
+rofi.color-window:  black,        black,    white
+
+! set system font
+rofi.font: system_font 20
+
+! disable separator
+rofi.separator-style: none
+
+! hide the scroll bar
+rofi.hite-scrollbar: true
+
+! set number of lines
+rofi.lines: 5
+
+! set padding
+rofi.padding: 400
+
+! set width
+rofi.width: 100
+
+! set opacity
+rofi.opacity: 85
+
+rofi.disable-history: true
+
+i3wm.font: system_dont 12
 !!! Themes overrides
 
 ! MDE’s adobe theme overrides; very similar to vim colorscheme:
