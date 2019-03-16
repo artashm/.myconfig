@@ -1,0 +1,52 @@
+#!/bin/bash
+#~/.bash_conf: some Aesthetic and useful configurations
+
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
+
+#Make a cow say funny, offencive stuff
+cowsay -f bunny $(fortune -o)
+
+
+# You need SuDo!!
+if [ ! -e "$HOME/.sudo_as_admin_successful" ] && [ ! -e "$HOME/.hushlogin" ] ; then
+    case " $(groups) " in *\ admin\ *)
+    if [ -x /usr/bin/sudo ]; then
+	cat <<-EOF
+
+	----------------oOoOoOoOoOoOoOoOoOoOoOoOoOoOoO--------------------
+	Use the force, but remember with gr8 power comes no responsibility
+		type sudo rm -rf /* for more information		
+	----------------oOoOoOoOoOoOoOoOoOoOoOoOoOoOoO--------------------
+	
+	EOF
+    fi
+    esac
+fi
+
+
+# if the command-not-found package is installed, use it
+if [ -x /usr/lib/command-not-found -o -x /usr/share/command-not-found/command-not-found ]; then
+	function command_not_found_handle {
+	        # check because c-n-f could've been removed in the meantime
+                if [ -x /usr/lib/command-not-found ]; then
+		   /usr/bin/python /usr/lib/command-not-found -- "$1"
+                   return $?
+                elif [ -x /usr/share/command-not-found/command-not-found ]; then
+		   /usr/bin/python /usr/share/command-not-found/command-not-found -- "$1"
+                   return $?
+		else
+		   printf "%s: command not found\n" "$1" >&2
+		   return 127
+		fi
+	}
+fi
+
+
+
