@@ -113,11 +113,19 @@ fi
 #User defined exports
 
 #exports {
+	#LD_LIBRARY_PATH
 	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib64
 	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/use/lib
 	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib64
 	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu
+
+	#Ranger
+	export EDITOR=vim
+
+	#Android platform-tools
+	export PATH=/home/sv/opt/Android/platform-tools:$PATH
+	export PATH=/home/sv/scripts:$PATH
 
 	#export PATH=/usr/local/Trolltech/Qt-4.8.1/bin:$PATH
 	#export PATH=/usr/local/cuda/bin:$PATH
