@@ -11,7 +11,7 @@ fi
 
 
 #Make a cow say funny, offencive stuff
-cowsay -f bunny $(fortune -o)
+cowsay -f te $(fortune -o)
 
 
 # You need SuDo!!
